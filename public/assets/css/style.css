@@ -1,8 +1,54 @@
 h1{
-	font-size: 40px;
+	font-size: 50px;
 	background-color: #191970;
 	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
 	color: #FFF;
 	margin-top:0px;
+	padding:20px;
+}
+
+#theArticle{
+	float:left;
+	width: 60%;
+}
+
+#theTitle{
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+#commentArea{
+	float:right;
+
+	width: 30%;
+}
+
+#authorInput{
+	display: block;
+	width: 75%;
+}
+
+#commentInput{
+	display: block;
+	width: 75%;
+}
+
+#addComment{
+	margin:0 auto;
+}
+
+li:nth-child(even){
+	background-color: #DDD;
+}
+
+ul{
+	list-style: none;
 	padding:10px;
+	margin-left:0px;
+	padding-left:0px;
+}
+
+li{
+	padding:10px;
+	margin-left:0px;
 }

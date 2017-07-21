@@ -1,6 +1,13 @@
 <body>
 <h1 class="text-center">Mongo News</h1>
-
+    <div id="commentArea">{{this.author}}
+      <br/>{{this.comment}}
+      <form method="POST" action="/" class="button-size" id="addComment">
+        <input type="text" name="author" id="authorInput" placeholder="Name"></input>
+        <textarea type="text" name="comment" id="commentInput" placeholder="Comment"></textarea>
+        <button type="submit">Post Comment<d/button>
+      </form>
+    </div>
 <ul>
   {{#each entry}}
     <li>
