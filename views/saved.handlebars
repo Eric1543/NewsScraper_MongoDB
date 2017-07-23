@@ -22,33 +22,23 @@
 <div id="theArticle">
   <ul>
     {{#each entry}}
+      {{#if this.saved}}
       <li>
         <p>
           <span id="theTitle">{{this.title}}</span>
           <br/><a>{{this.link}}></a>
-
-          <form method="POST" action="/saveArticle/{{this.id}}" class="button-size">
-            <button type="submit">Save Article</button>
+          <form method="POST" action="/deleteArticle/{{this.id}}" class="button-size">
+            <button type="submit">Delete Article</button>
           </form>
+
   {{!--         <form action="/{{this.id}}?_method=DELETE" method="POST">
             <input type="hidden" name="id" value="{{this.id}}">
             <button type="submit">Delete</button>
           </form> --}}
         </p>
       </li>
+      {{/if}}
     {{/each}}
   </ul>
 </div>
 </body>
-{{!-- <h2>Add a Movie to Watch</h2>
-<form method="POST" action="/" class="button-size">
-	<textarea type="text" name="movie"></textarea>
-	<button type="submit">Save Movie!</button>
-</form>
-
-<h2>Update a Movie</h2>
-<form action="/?_method=PUT" method="POST" class="button-size">
-  <input type="text" name="id" placeholder="id">
-	<textarea type="text" name="movie" placeholder="what do you want to update this movie title to?"></textarea>
-	<button type="submit">Update Movie!</button>
-</form> --}}

@@ -1,15 +1,63 @@
 h1{
 	font-size: 50px;
 	background-color: #191970;
-	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
-	color: #FFF;
+	font-weight:bold;
+	text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+	color: #DDD;
 	margin-top:0px;
-	padding:20px;
+	margin-bottom:0px;
+	padding:30px;
+	font-style: italic;
+}
+
+ul{
+	margin-top:0px;
+	padding-top:0px;
+}
+
+#topNavButtons{
+	display: inline-block;
+}
+
+#allArticles{
+	background-color: #6495ED;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right:10px;
+}
+
+#savedArticles{
+	background-color: #6495ED;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right:10px;
+}
+
+#scrapeButton{
+	background-color: #6495ED;
+	font-size: 16px;
+	color: #FFF;
+	font-weight: bold;
+	margin-right:10px;
+}
+
+#navButtons{
+	border-top: 3px solid #DDD;
+	border-bottom: 3px solid #DDD;
+	background-color: #000;
+	padding-top:7px;
+	padding-bottom: 7px;
+	margin-bottom:0px;
 }
 
 #theArticle{
+	margin-top:0px;
 	float:left;
-	width: 60%;
+	width: 70%;
+	font-size: 18px;
+	padding-top: 0px;
 }
 
 #theTitle{
@@ -19,18 +67,19 @@ h1{
 
 #commentArea{
 	float:right;
-
+	padding-top: 0px;
+	margin-top: 0px;
 	width: 30%;
 }
 
 #authorInput{
 	display: block;
-	width: 75%;
+	width: 95%;
 }
 
 #commentInput{
 	display: block;
-	width: 75%;
+	width: 95%;
 }
 
 #addComment{
@@ -42,6 +91,7 @@ li:nth-child(even){
 }
 
 ul{
+
 	list-style: none;
 	padding:10px;
 	margin-left:0px;
