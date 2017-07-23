@@ -25,7 +25,7 @@ app.use(express.static(__dirname + "/public"));
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");	
 
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds117913.mlab.com:17913/heroku_lt4xt46f", {
+mongoose.connect("mongodb://heroku_lt4xt46f:b95kj18rtrl6b8arke23e8a143@ds117913.mlab.com:17913/heroku_lt4xt46f", {
 	useMongoClient: true
 });
 
