@@ -1,4 +1,5 @@
 <body>
+<div id="theHead">
 <h1 class="text-center">Mongo News Scraper</h1>
 <nav class="navbar navbar-light bg-faded text-center" id="navButtons">
   <form class="form-inline" action="/" method="GET" id="topNavButtons">
@@ -11,6 +12,7 @@
     <button class="btn btn-outline-success" type="button" id="scrapeButton">Scrape New Articles</button>
   </form>
 </nav>
+</div>
     <div id="commentArea">{{this.author}}
       <br/>{{this.comment}}
       <form method="POST" action="/" class="button-size" id="addComment">
@@ -19,26 +21,23 @@
         <button type="submit">Post Comment</button>
       </form>
     </div>
-<div id="theArticle">
-  <ul>
-    {{#each entry}}
-      {{#if this.saved}}
-      <li>
-        <p>
-          <span id="theTitle">{{this.title}}</span>
-          <br/><a>{{this.link}}></a>
-          <form method="POST" action="/deleteArticle/{{this.id}}" class="button-size">
-            <button type="submit">Delete Article</button>
-          </form>
-
-  {{!--         <form action="/{{this.id}}?_method=DELETE" method="POST">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit">Delete</button>
-          </form> --}}
-        </p>
-      </li>
-      {{/if}}
-    {{/each}}
-  </ul>
-</div>
+  <div id="theArticle">
+    <ul>
+      {{#each entry}}
+        {{#if this.saved}}
+        <li>
+          <p>
+            <span id="theTitle">{{this.title}}</span>
+            <br/><a href={{this.link}} target="blank">{{this.link}}</a>
+            <form method="POST" action="/deleteArticle/{{this.id}}" class="button-size">
+              <button type="submit" id="saveIt">Delete Article</button>
+            </form>
+          </p>
+        </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <footer>2017 Eric Williams
+</footer>
 </body>
