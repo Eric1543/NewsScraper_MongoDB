@@ -28,7 +28,7 @@
         <li>
           <p>
             <span id="theTitle">{{this.title}}</span>
-            <br/><a href={{this.link}} target="blank">{{this.link}}</a>
+            <br/><a href={{this.link}} target="blank" id="theLink">{{this.link}}</a>
             <form method="POST" action="/deleteArticle/{{this.id}}" class="button-size">
               <button type="submit" id="saveIt">Delete Article</button>
             </form>
@@ -38,6 +38,6 @@
       {{/each}}
     </ul>
   </div>
-  <footer>2017 Eric Williams
+  <footer>Source: Reddit News <br>Website: &copy; 2017 Eric Williams
 </footer>
 </body>

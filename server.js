@@ -25,7 +25,7 @@ app.use(express.static(__dirname + "/public"));
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");	
 
-mongoose.connect("mongodb://localhost/mongoScraper", {
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds117913.mlab.com:17913/heroku_lt4xt46f", {
 	useMongoClient: true
 });
 
