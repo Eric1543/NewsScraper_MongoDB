@@ -1,21 +1,3 @@
-// Grab the articles as a json
-// $.getJSON("/articles", function(data) {
-//   // For each one
-//   for (var i = 0; i < data.length; i++) {
-//     // Display the apropos information on the page
-//     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-//   }
-// });
-
-// $(document).on("click", "#savedArticles", function(){
-// 	$.ajax({
-// 		method: "GET",
-// 		url: "/saved"
-// 		}).done(function(){
-// 			console.log("Saved Articles");
-// 		});
-// });
-
 $(document).on("click", "#savedArticles", function(){
 	document.location.href='/saved';
 });
@@ -25,5 +7,12 @@ $(document).on("click", "#allArticles", function(){
 });
 
 $(document).on("click", "#scrapeButton", function(){
-	document.location.href='/scrape';
+	$.ajax({
+		method: "post",
+		url: "/scrape"
+	}).done(function(){
+		alert("Scrape complete");
+		console.log("Scrape complete");
+		document.location.href='/';
+	})
 });

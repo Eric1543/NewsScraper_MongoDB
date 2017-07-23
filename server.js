@@ -102,41 +102,6 @@ app.get("/saved", function(req, res) {
 });
 
 // Scrapes reddit news and saves the results into the database as an array of objects
-app.get("/scrape", function(req, res) {
-  // First, we grab the body of the html with request
-  request("https://www.reddit.com/r/news/", function(error, response, html) {
-    // Then, we load that into cheerio and save it to $ for a shorthand selector
-    var $ = cheerio.load(html);
-    // Now, we grab every h2 within an article tag, and do the following:
-    $("a.title").each(function(i, element) {
-      // Save an empty result object
-      var result = {};
-      // Add the text and href of every link, and save them as properties of the result object
-      result.title = $(this).text();
-      result.link = $(this).attr("href");
-      result.saved = false;
-      // Using our Article model, create a new entry
-      // This effectively passes the result object to the entry (and the title and link)
-      var entry = new Article(result);
-      // Check so no duplicates added to DB
-      Article.findOne({"title": result.title}, function(err, doc){
-        if(doc===null){
-          entry.save(function(err, doc){
-            if (err) {
-              console.log(err);
-            }
-            else {
-              console.log("Saving result(s)");
-              console.log(doc);
-            }
-          });
-        }
-      });
-    });
-  });
-  // Tell the browser that we finished scraping the text
-  res.send("Scrape Complete");
-});
 
 app.post("/scrape", function(req, res) {
   // First, we grab the body of the html with request
