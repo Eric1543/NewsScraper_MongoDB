@@ -9,6 +9,7 @@ var Comment = require("./models/Comment.js");
 
 var request = require("request");
 var cheerio = require("cheerio");
+const PORT = process.env.PORT || 3000;
 
 mongoose.Promise = Promise;
 
@@ -26,6 +27,9 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");	
 
 mongoose.connect("mongodb://heroku_lt4xt46f:b95kj18rtrl6b8arke23e8a143@ds117913.mlab.com:17913/heroku_lt4xt46f");
+// , {
+//   useMongoClient: true
+// });
 
 var db = mongoose.connection;
 
@@ -141,6 +145,6 @@ app.post("/scrape", function(req, res) {
 });
 
 // Start the server to listen on port 3000
-app.listen(3000, function() {
+app.listen(PORT, function() {
 	console.log("App running on port 3000!");
 });
